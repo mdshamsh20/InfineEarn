@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .nav {
+      position: fixed;
+      width: 100%;
+      padding: 1rem 5%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #10B981;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #10B981;
+    }
+
+    section {
+      padding: 5rem 5%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #ECFDF5 0%, #fff 100%);
+      padding-top: 7rem;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: #064E3B;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #374151;
+      margin-bottom: 2rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    }
+
+    .primary-button {
+      background: #10B981;
+      color: white;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #064E3B;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-desc {
+      color: #4B5563;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: #ECFDF5;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: #10B981;
+    }
+
+    .problem-solution {
+      background: #F9FAFB;
+    }
+
+    .benefits {
+      background: white;
+    }
+
+    .join-section {
+      background: #064E3B;
+      color: white;
+      text-align: center;
+    }
+
+    .join-title {
+      color: white;
+    }
+
+    .join-form {
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+
+    .join-form input {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .footer {
+      background: #111827;
+      color: white;
+      padding: 3rem 5%;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo">InfinEarn</div>
+    <div class="nav-links">
+      <a href="#problem">Why Us</a>
+      <a href="#solution">Solution</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#join">Join Now</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Turn Your Network Into Revenue</h1>
+      <p class="subtitle">Connect skilled professionals with commission-based sales partners to grow your business exponentially.</p>
+      <a href="#join" class="button primary-button">Get Started</a>
+    </div>
+  </section>
+
+  <section class="problem-solution" id="problem">
+    <h2 class="section-title">The Challenge</h2>
+    <p class="section-desc">Skilled professionals often struggle with sales while talented salespeople lack diverse opportunities.</p>
+    
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Time Consuming</h3>
+        <p>Professionals spend valuable time on sales instead of focusing on their core skills.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">💼</div>
+        <h3>Limited Reach</h3>
+        <p>Traditional networking limits exposure to potential clients and opportunities.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Inconsistent Growth</h3>
+        <p>Irregular client acquisition leads to unstable income and business growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="solution">
+    <h2 class="section-title">Our Solution</h2>
+    <p class="section-desc">A commission-based marketplace connecting skilled professionals with dedicated sales partners.</p>
+    
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Perfect Match</h3>
+        <p>Connect with sales partners who understand your industry and value proposition.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Commission Based</h3>
+        <p>Pay only when deals close. Set your own commission rates and terms.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Scalable Growth</h3>
+        <p>Expand your reach through multiple sales partners working simultaneously.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits" id="benefits">
+    <h2 class="section-title">Benefits</h2>
+    <p class="section-desc">Value for everyone in the ecosystem</p>
+    
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">👨‍💻</div>
+        <h3>For Professionals</h3>
+        <p>Focus on your craft while sales partners bring you qualified clients. Set your terms and grow efficiently.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>For Sales Partners</h3>
+        <p>Access diverse opportunities, earn attractive commissions, and build your network.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🏢</div>
+        <h3>For Agencies</h3>
+        <p>Scale your client acquisition through a network of motivated sales partners.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="join-section" id="join">
+    <h2 class="section-title join-title">Join InfinEarn Today</h2>
+    <p class="section-desc">Be among the first to access our platform when we launch.</p>
+    
+    <form class="join-form">
+      <input type="email" placeholder="Enter your email" required>
+      <select class="button" style="width: 100%; margin-bottom: 1rem; background: white;">
+        <option value="">Select your role</option>
+        <option value="professional">Service Professional</option>
+        <option value="sales">Sales Partner</option>
+        <option value="agency">Agency</option>
+      </select>
+      <button type="submit" class="button primary-button" style="width: 100%">Join Waitlist</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="logo">InfinEarn</div>
+    <div class="social-links">
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+    </div>
+    <p>© 2024 InfinEarn. All rights reserved.</p>
+  </footer>
+</body>
+</html>
