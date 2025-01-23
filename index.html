@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+        // JavaScript to handle form submission
+        document.getElementById('joinForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+
+            const email = document.getElementById('email').value;
+            const role = document.getElementById('role').value;
+
+            if (!role) {
+                alert('Please select a role.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('role', role);
+
+            fetch('submit.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); // Display success or error message
+                document.getElementById('joinForm').reset(); // Clear the form
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    </script>
+
   <style>
     * {
       margin: 0;
@@ -305,16 +338,17 @@
     <h2 class="section-title join-title">Join InfinEarn Today</h2>
     <p class="section-desc">Be among the first to access our platform when we launch.</p>
     
-    <form class="join-form">
-      <input type="email" placeholder="Enter your email" required>
-      <select class="button" style="width: 100%; margin-bottom: 1rem; background: white;">
-        <option value="">Select your role</option>
-        <option value="professional">Service Professional</option>
-        <option value="sales">Sales Partner</option>
-        <option value="agency">Agency</option>
-      </select>
-      <button type="submit" class="button primary-button" style="width: 100%">Join Waitlist</button>
+    <form class="join-form" id="joinForm">
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <select class="button" id="role" name="role" style="width: 100%; margin-bottom: 1rem; background: white;">
+            <option value="">Select your role</option>
+            <option value="professional">Service Professional</option>
+            <option value="sales">Sales Partner</option>
+            <option value="agency">Agency</option>
+        </select>
+        <button type="submit" class="button primary-button" style="width: 100%">Join Waitlist</button>
     </form>
+
   </section>
 
   <footer class="footer">
@@ -327,4 +361,5 @@
     <p>© 2024 InfinEarn. All rights reserved.</p>
   </footer>
 </body>
+  
 </html>
