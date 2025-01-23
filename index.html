@@ -18,19 +18,20 @@
             formData.append('email', email);
             formData.append('role', role);
 
-            fetch('submit.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => {
-                alert(data); // Display success or error message
-                document.getElementById('joinForm').reset(); // Clear the form
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-            });
+            fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, role: role })
+    })
+    .then(response => response.text())
+    .then(data => {
+    alert(data);
+    document.getElementById('joinForm').reset();
+    })
+    .catch(error => {
+    console.error('Error:', error);
+    alert('An error occurred. Please try again.');
+    });
         });
     </script>
 
