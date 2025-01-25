@@ -18,7 +18,7 @@
             formData.append('email', email);
             formData.append('role', role);
 
-            fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+            fetch('https://script.google.com/macros/s/AKfycbwiurXtqUzFAcIbyOcz6DeUFAe1QuAw4vxpmTiTfmod2C8EjUNdcukpvt2UrVWLE4It2g/exec', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: email, role: role })
